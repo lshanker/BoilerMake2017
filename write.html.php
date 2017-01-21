@@ -19,8 +19,9 @@
         <a class="navbar-brand" href="Readstory.html">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Write</a></li>
+        <li class="active"><a href="write.html">Write</a></li>
         <li><a href="Profile.html">My Profile</a></li>
+        <li><a href="Myclass.html">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

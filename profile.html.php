@@ -38,7 +38,6 @@
 
   <div class="container">
   <div class = "row">
-    <div class = "col-md-1" ><br /></div>
     <div class = "col-md-3" ><br /><br /><br /><IMG SRC="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Common-dog-behaviors-explained.jpg?itok=FSzwbBoi" ALT="some text" WIDTH=250 HEIGHT=250>
     <h4>Grade: 2</h4>
     <h4>Points: 13</h4>

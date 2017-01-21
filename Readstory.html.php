@@ -1,5 +1,5 @@
 <?php
-include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
  ?>
 
 <!DOCTYPE html>
@@ -19,12 +19,11 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">Read a story!</a>
+        <a class="navbar-brand" href="#">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li><a href="profile.html.php">My Profile</a></li>
-        <li><a href="Myclass.html.php">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -42,6 +41,8 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
     </div>
   </nav>
   <div align="center">
+
+
     <!--Story textbox and add more buttons-->
   <?php foreach ($stories as $story): ?>
    <form action = "index.php" method = "post">
@@ -50,7 +51,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <?php htmlout($story["title"]); ?></textarea>
     </div>
     <div>
-      <a href="Addmore.html.php"><button class="button button3" type = "submit">Read this story!</button></a><br/><br/>
+      <button class="button button3" type = "submit">Read this story!</button><br/><br/>
     </div>
       <input type = "hidden" value = "<?php htmlout($story["id"]); ?>" name = "id"/>
       <input type = "hidden" value = "<?php htmlout($story["submissions"]); ?>" name = "submissions"/>

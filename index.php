@@ -18,7 +18,7 @@ if(!userIsLoggedIn()){
       $output = 'Error adding new user.';
       include $_SERVER['DOCUMENT_ROOT'] . '/includes/output.html.php';
       exit();
-    }      
+    }
   }
   include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/signup.html.php";
   exit();
@@ -28,8 +28,8 @@ if(!userIsLoggedIn()){
 
 //If the user submits an add new story form
 if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
-  include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
-
+  include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+  $GLOBALS['addstory'] = "Story submitted.  You got 5 points!";
   $storytext = mysqli_real_escape_string($link, $_POST["storytext"]);
   $title = mysqli_real_escape_string($link, $_POST['title']);
   $sql = "INSERT INTO stories SET storytext = '$storytext', storydate = 'CURDATE()', title = '$title'";

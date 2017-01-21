@@ -26,6 +26,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <ul class="nav navbar-nav">
         <li><a href="write.html">Write a new story</a></li>
         <li><a href="Profile.html">My Profile</a></li>
+        <li><a href="Class.html">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

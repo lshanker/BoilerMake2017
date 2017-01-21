@@ -1,12 +1,15 @@
 <?php
 
 
+include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/access.inc.php";
 
 
+if(!userIsLoggedIn()){
 
+  include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/signup.html.php";
+  exit();
 
-
-
+}
 
 
 //If the user submits an add new story form
@@ -53,7 +56,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
 
 
   //Generate the list of stories for the main page
-  include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+  include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
 
 
   $result = MySQLi_query($link, "SELECT * FROM stories");

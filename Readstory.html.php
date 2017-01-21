@@ -33,8 +33,11 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <form action = "index.php" method = "post">
+        <button type="submit" class="btn btn-default">Logout</button>
+        <input type = "hidden" name = "action" value = "logout"/>
+        <input type = "hidden" name = "goto" value = "index.php"/>
+    </form>
     </ul>
     </div>
   </nav>

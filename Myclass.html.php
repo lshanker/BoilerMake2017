@@ -148,12 +148,12 @@ $(document).ready(function ($) {
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="Readstory.html">Read a story!</a>
+        <a class="navbar-brand" href="Readstory.html.php">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="write.html">Write</a></li>
-        <li><a href="Profile.html">My Profile</a></li>
-        <li class="active"><a href="Myclass.html">My Class</a></li>
+        <li><a href="write.html.php">Write</a></li>
+        <li><a href="Profile.html.php">My Profile</a></li>
+        <li class="active"><a href="Myclass.html.php">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

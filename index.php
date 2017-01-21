@@ -11,7 +11,7 @@
 
 //If the user submits an add new story form
 if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
-  include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+  include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
 
   $storytext = mysqli_real_escape_string($link, $_POST["storytext"]);
   $title = mysqli_real_escape_string($link, $_POST['title']);
@@ -53,7 +53,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
 
 
   //Generate the list of stories for the main page
-  include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+  include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
 
 
   $result = MySQLi_query($link, "SELECT * FROM stories");

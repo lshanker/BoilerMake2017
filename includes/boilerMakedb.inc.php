@@ -20,6 +20,7 @@ if(!MySQLi_select_db($link, "homedb")){
   include "output.html.php";
   exit();
 }
+ 
 
 $output = "Connected to database successfully.";
 

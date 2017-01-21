@@ -6,6 +6,20 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/access.inc.ph
 
 if(!userIsLoggedIn()){
 
+  if(isset($_POST['action']) && $_POST['action'] == 'join'){
+    $GLOBALS['loginError'] = "Created account for " . $_POST['email'];
+
+  include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+  $email = mysqli_real_escape_string($link, $_POST['email']);
+    $name = mysqli_real_escape_string($link, $_POST['name']);
+    $password = md5($_POST['password'] . 'ijdb');
+  $sql = "INSERT INTO authors SET name = '$name', email = '$email', password = '$password'";
+      if(!MySQLi_query($link, $sql)){
+      $output = 'Error adding new user.';
+      include $_SERVER['DOCUMENT_ROOT'] . '/includes/output.html.php';
+      exit();
+    }      
+  }
   include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/signup.html.php";
   exit();
 

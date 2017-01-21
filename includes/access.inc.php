@@ -13,6 +13,7 @@ function userIsLoggedIn()
           return FALSE;
         }
 
+
     //Look for an author in the database
     $password = md5($_POST['password'] . 'ijdb');
 
@@ -21,6 +22,7 @@ function userIsLoggedIn()
       $_SESSION['loggedIn'] = TRUE;
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['password'] = $password;
+
       return TRUE;
     }else{
       session_start();
@@ -43,6 +45,8 @@ function userIsLoggedIn()
 
 	  session_start();
   if(isset($_SESSION['loggedIn'])){
+
+
     return databaseContainsAuthor($_SESSION['email'], $_SESSION['password']);
   }
 

@@ -1,11 +1,34 @@
 <?php
   //Change the story's text to include the new addition
-      include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+  if(!session_id()){
+  session_start();
+  }
+
+  include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+
+  //Get the author's name first
+  $email = mysqli_real_escape_string($link, $_SESSION['email']);
+  $result = MySQLi_query($link, "SELECT name FROM authors WHERE email = '$email'");
+
+  if(!$result){
+    $output = "Error fetching student name.";
+    include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
+    exit();
+  }
+
+    while($row = mysqli_fetch_array($result)){
+
+    $names[] = array("name" => $row["name"]);
+    }
+
+    $authorName = $names[0]['name'];
+
+
     $storyid = mysqli_real_escape_string($link, $_POST['storyid']);
 
     $newtext = mysqli_real_escape_string($link, $_POST['newtext']);
     $originaltext = mysqli_real_escape_string($link, $_POST['storytext']);
-    $sqltext = $originaltext . "\n>>>>>>>>>>>>NEW AUTHOR NAME HERE\n" . $newtext;
+    $sqltext = $originaltext . "\n\n>>>>>>>>>>>>The next section was written by " . $authorName . ":\n" .$newtext;
     $sql = "UPDATE stories SET storytext = '$sqltext' WHERE id = '$storyid'";
     if(!MySQLi_query($link, $sql)){
       $output = 'Error adding new story text.';
@@ -36,4 +59,3 @@
 
 </body>
 </html>
-

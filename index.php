@@ -60,6 +60,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
     $title = $_POST["title"];
 
     include "Addmore.html.php";
+    exit();
   }
 
 

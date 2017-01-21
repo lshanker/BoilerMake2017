@@ -29,12 +29,43 @@
 <body background ="http://7-themes.com/data_images/collection/9/4506641-orange-wallpapers.png">
 <div class="container-fluid">
 
+<<<<<<< Updated upstream
+=======
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Readstory.html">Read a story!</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="write.html">Write a new story</a></li>
+        <li><a href="Profile.html">My Profile</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    </div>
+  </nav>
+>>>>>>> Stashed changes
 
 <div class="area">
  Thanks for sharing a great story!
 </div>
 
+<<<<<<< Updated upstream
 <a href="index.php"><button class="button button4">Browse new stories</button></a><br/><br/>
+=======
+  <div class = "col-md-1" ><br /></div>
+   <div class = "col-md-7" > <h1><br />Thanks for sharing a great story!</h1>
+   <br /><a href="Readstory.html.php"><button class="button button4">Browse new stories</button></a><br/><br /></div>
+
+>>>>>>> Stashed changes
 
   </body>
   </html>

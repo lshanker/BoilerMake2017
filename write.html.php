@@ -16,11 +16,11 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="Readstory.html">Read a story!</a>
+        <a class="navbar-brand" href="Readstory.html.php">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="write.html">Write</a></li>
-        <li><a href="Profile.html">My Profile</a></li>
+        <li class="active"><a href="#">Write</a></li>
+        <li><a href="profile.html.php">My Profile</a></li>
         <li><a href="Myclass.html">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
@@ -30,7 +30,7 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="Signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     </div>
@@ -41,7 +41,7 @@
     <h1>Write a new story!</h1>
   </div>
   <form action = "index.php" method = "post">
-    <textarea type = "text" name = "title" rows = "1" cols = "25%" style="border:solid 7px #666666; resize:none" placeholder="Write your title here..."></textarea>
+    <textarea type = "text" name = "title" rows = "1" cols = "25%" style="border:solid 7px #666666; resize:none" placeholder="Title..."></textarea><br/>
     <textarea type = "text" name = "storytext" rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Write your story here..."></textarea>
     <button type = "submit" class="button button1">Post</button><br/><br/>
     <input type = "hidden" value = "addstory" name = "action"/>

@@ -1,3 +1,43 @@
 <style>
+.wrapper {
+    text-align: center;
+}
 
+p.serif {
+    font-family: "Book Antiqua", Palatino, serif;
+}
+.border {
+	border-color: #666666;
+	border:solid 7px;
+}
+
+.button {
+    background-color: black; 
+    border-radius: 15px 50px;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: Palatino;
+}
+
+.button3 {
+    background-color: #F3F7F6;
+    color: black;
+    border: 4px solid #8c8c8c;
+    position: absolute;
+    right: 15%;
+    }
+
+.button3:hover {
+    background-color: #666666;
+    color: white;
+}
 </style>

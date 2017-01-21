@@ -50,7 +50,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <?php htmlout($story["title"]); ?></textarea>
     </div>
     <div>
-      <button class="button button3" type = "submit">Read this story!</button><br/><br/>
+      <a href="Addmore.html.php"><button class="button button3" type = "submit">Read this story!</button></a><br/><br/>
     </div>
       <input type = "hidden" value = "<?php htmlout($story["id"]); ?>" name = "id"/>
       <input type = "hidden" value = "<?php htmlout($story["submissions"]); ?>" name = "submissions"/>

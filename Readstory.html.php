@@ -22,7 +22,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
         <a class="navbar-brand" href="#">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="write.html">Write</a></li>
+        <li><a href="write.html.php">Write</a></li>
         <li><a href="Profile.html">My Profile</a></li>
       </ul>
       <form class="navbar-form navbar-left">
@@ -40,10 +40,22 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
   <div align="center">
     <!--Story textbox and add more buttons-->
   <?php foreach ($stories as $story): ?>
-  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled>
-    <?php htmlout($story["storytext"]); ?></textarea><br/>
-    <a href="Addmore.html"><button class="button button3">Add to the story!</button></a><br/><br/>
-<?php endforeach; ?>
+   <form action = "index.php" method = "post">
+     <div>
+    <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled>
+      <?php htmlout($story["title"]); ?></textarea>
+    </div>
+    <div>
+      <button class="button button3" type = "submit">Read this story!</button><br/><br/>
+    </div>
+      <input type = "hidden" value = "<?php htmlout($story["id"]); ?>" name = "id"/>
+      <input type = "hidden" value = "<?php htmlout($story["submissions"]); ?>" name = "submissions"/>
+      <input type = "hidden" value = "<?php htmlout($story["storytext"]); ?>" name = "storytext"/>
+      <input type = "hidden" value = "<?php htmlout($story["storydate"]); ?>" name = "date"/>
+      <input type = "hidden" value = "<?php htmlout($story["title"]); ?>" name = "title"/>
+      <input type = "hidden" name = "action" value = "readstory"/>
+   </form>
+  <?php endforeach; ?>
 
 </div>
   </div>

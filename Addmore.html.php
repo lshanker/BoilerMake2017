@@ -1,3 +1,8 @@
+<?php
+include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
+ ?>
+
+
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -39,7 +44,8 @@
   <div class = "page-header">
     <h1>Add more to the story!</h1>
   </div>
-  <textarea rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Start writing here..."></textarea>
+  <textarea rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Start writing here...">
+  <?php htmlout($storytext); ?></textarea>
 <a href="postsuccess.html"><button class="button button1">Share</button></a><br/><br/>
 
 

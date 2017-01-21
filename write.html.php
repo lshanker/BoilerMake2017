@@ -39,9 +39,12 @@
   <div class = "page-header">
     <h1>Write a new story!</h1>
   </div>
-  <textarea rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Start writing here..."></textarea>
-<a href="postsuccess.html"><button class="button button1">Post</button></a><br/><br/>
-
+  <form action = "index.php" method = "post">
+    <textarea type = "text" name = "title" rows = "1" cols = "25%" style="border:solid 7px #666666; resize:none" placeholder="Write your title here..."></textarea>
+    <textarea type = "text" name = "storytext" rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Write your story here..."></textarea>
+    <button type = "submit" class="button button1">Post</button><br/><br/>
+    <input type = "hidden" value = "addstory" name = "action"/>
+</form>
 
   </body>
   </html>

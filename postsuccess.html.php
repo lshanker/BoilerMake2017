@@ -61,7 +61,6 @@
 <<<<<<< Updated upstream
 <a href="index.php"><button class="button button4">Browse new stories</button></a><br/><br/>
 =======
-  <div class = "col-md-1" ><br /></div>
    <div class = "col-md-7" > <h1><br />Thanks for sharing a great story!</h1>
    <br /><a href="Readstory.html.php"><button class="button button4">Browse new stories</button></a><br/><br /></div>
 

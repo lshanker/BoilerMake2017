@@ -1,7 +1,5 @@
 <?php
 
-echo "AT DB FILE";
-
 //Setting up the database stuff
 $link = MySQLi_connect("lshankerdb.cdsmztpikwiw.us-west-2.rds.amazonaws.com", "lshanke", "boilerEar17MK");
 
@@ -24,5 +22,5 @@ if(!MySQLi_select_db($link, "homedb")){
 }
 
 $output = "Connected to database successfully.";
-include "output.html.php";
+
 ?>

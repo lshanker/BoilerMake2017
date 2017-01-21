@@ -1,3 +1,7 @@
+<?php
+include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
+ ?>
+
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -34,15 +38,12 @@
     </div>
   </nav>
   <div align="center">
-  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled></textarea><br/>
+    <!--Story textbox and add more buttons-->
+  <?php foreach ($stories as $story): ?>
+  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled>
+    <?php htmlout($story["storytext"]); ?></textarea><br/>
     <a href="Addmore.html"><button class="button button3">Add to the story!</button></a><br/><br/>
-  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled></textarea><br/>
-    <a href="Addmore.html"><button class="button button3">Add to the story!</button></a><br/><br/>
-  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled></textarea><br/>
-    <a href="Addmore.html"><button class="button button3">Add to the story!</button></a><br/><br/>
-  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled></textarea><br/>
-    <a href="Addmore.html"><button class="button button3">Add to the story!</button></a><br/><br/>
-
+<?php endforeach; ?>
 
 </div>
   </div>

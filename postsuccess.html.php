@@ -6,9 +6,9 @@
 
   include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
 
-  //Get the author's name first
+  //Get the author's name and points
   $email = mysqli_real_escape_string($link, $_SESSION['email']);
-  $result = MySQLi_query($link, "SELECT name FROM authors WHERE email = '$email'");
+  $result = MySQLi_query($link, "SELECT name, points FROM authors WHERE email = '$email'");
 
   if(!$result){
     $output = "Error fetching student name.";
@@ -18,10 +18,11 @@
 
     while($row = mysqli_fetch_array($result)){
 
-    $names[] = array("name" => $row["name"]);
+    $names[] = array("name" => $row["name"], "points" => $row["points"]);
     }
 
     $authorName = $names[0]['name'];
+    $currPoints = $names[0]['points'];
 
 
     $storyid = mysqli_real_escape_string($link, $_POST['storyid']);
@@ -32,6 +33,15 @@
     $sql = "UPDATE stories SET storytext = '$sqltext' WHERE id = '$storyid'";
     if(!MySQLi_query($link, $sql)){
       $output = 'Error adding new story text.';
+      include $_SERVER['DOCUMENT_ROOT'] . '/includes/output.html.php';
+      exit();
+    }
+
+    //Now update the points (+10 for adding to a story)
+    $newPoints = $currPoints + 10;
+    $sql = "UPDATE authors SET points = '$newPoints' WHERE email = '$email'";
+    if(!MySQLi_query($link, $sql)){
+      $output = 'Error adding points.';
       include $_SERVER['DOCUMENT_ROOT'] . '/includes/output.html.php';
       exit();
     }
@@ -52,7 +62,7 @@
 <body background ="http://7-themes.com/data_images/collection/9/4506641-orange-wallpapers.png">
 
 <div class="area">
- Thanks for sharing a great story!
+ Thanks for sharing a great story! (You got 10 points!)
 </div>
 <a href="index.php"><button class="button button4">Browse new stories</button></a>
 

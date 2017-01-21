@@ -39,6 +39,34 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
     exit();
   }
 
+  //Now update the points (+5 for starting a story)
+  $email = mysqli_real_escape_string($link, $_SESSION['email']);
+  $result = MySQLi_query($link, "SELECT name, points FROM authors WHERE email = '$email'");
+
+  if(!$result){
+    $output = "Error fetching student name.";
+    include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
+    exit();
+  }
+
+    while($row = mysqli_fetch_array($result)){
+    $names[] = array("name" => $row["name"], "points" => $row["points"]);
+    }
+
+    $authorName = $names[0]['name'];
+    $currPoints = $names[0]['points'];
+
+  $newPoints = $currPoints + 5;
+  $sql = "UPDATE authors SET points = '$newPoints' WHERE email = '$email'";
+
+  $result = MySQLi_query($link, $sql);
+
+  if(!$result){
+    $output = "Error adding points.";
+    include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
+    exit();
+  }
+
   header('Location: .');
   exit();
   }

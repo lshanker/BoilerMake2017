@@ -6,11 +6,6 @@
 p.serif {
     font-family: "Book Antiqua", Palatino, serif;
 }
-h1 {
-    color: #2E3532;
-    font-family: Palatino;
-    font-size:250%;
-}
 
 textarea{
     display:block;
@@ -51,7 +46,7 @@ textarea{
 
 .placement {
     font: bold;
-    color: white;
+    color: black;
     margin: auto;
     width: 50%;
     padding: 10px;

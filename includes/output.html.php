@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <p><?php echo $output; ?></p>
+  <p><?php echo "$output"; ?></p>
 </body>
 </html>

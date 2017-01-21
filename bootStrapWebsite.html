@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <title>My First Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel = "icon" href = "http://pix.iemoji.com/images/emoji/apple/ios-9/256/bug.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">MyFirstBootstrap</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class = "page-header">
+    <h1> Bootstrap 1 </h1>
+  </div>
+
+  <div class = "jumbotron">
+    <h1> Hello World! </h1>
+</div>
+
+  <div class="row">
+    <div class="col-md-4" style="background-color:lavender;">column 1</div>
+    <div class="col-md-4" style="background-color:lavenderblush;">column 2</div>
+    <div class="col-md-4" style="background-color:lavender;">column 3</div>
+    <!--The Columns must add to 12-->
+  </div>
+  <div class = "row">
+    <div class = "col-md-8"  style="background-color:yellow"> This column is longer </div>
+    <div class = "col-md-4"  style="background-color:green"> than this one </div>
+  </div>
+
+<br>
+  <p class = "bg-success"> read this quote: </p>
+  <blockquote>
+    <p>This is the best website ever made</p>
+    <footer>You</footer>
+  </blockquote>
+
+<div class = "progress" style = "width: 50%">
+  <div class = "progress-bar progress-bar-striped active" role = "progressbar" style = "width: 100%"> Fun Now Loading
+    <span class = "sr-only">70% Complete</span>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class = "table">
+    <thread>
+      <tr>
+        <th>User</th>
+        <th>Level of Satisfaction </th>
+      </tr>
+    </thread>
+    <tbody>
+      <tr>
+        <td> 1</td>
+        <td>Very High</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="well well-sm">
+  <h5> check out this well! </h5>
+</div>
+
+<div class="container">
+  <h3>Have Some Tabs</h3>
+  <ul class="nav nav-tabs">
+    <li class="active"><a  data-toggle = "tab" href="#tab1">Tab 1</a></li>
+    <li><a href="#tab2" data-toggle = "tab">Tab 2</a></li>
+    <li><a href="#tab3" data-toggle = "tab">Tab 3</a></li>
+  </ul>
+
+
+<div class = "tab-content">
+  <div id="tab1" class = "tab-pane fade in active">
+    <h3> Welcome to tab 1</h3>
+    <p>We've got text1!</p>
+  </div>
+  <div id ="tab2" class = "tab-pane fade">
+    <p> this is tab 2 <p>
+    </div>
+  <div id = "tab3" class = "tab-pane fade">
+    <p> ... and this is tab 3 <p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<span class="label label-warning label-as-badge" style = "background-color: red">hello</span>
+
+<div class = "btn-group">
+<button class = "btn btn-info dropdown-toggle" data-toggle = "dropdown" role = "button">
+<span class= "glyphicon glyphicon-heart"></span> Good Websites <span class = "caret"></span></button>
+<ul class = "dropdown-menu" role = "menu">
+  <li><a href = "https://www.reddit.com/"> Redddit </a></li>
+  <li><a href = "https://www.facebook.com/"> Facebook </a></li>
+  <li><a href = "https://crouton.net/"> Crouton </a></li>
+</ul>
+</div>
+
+<img src = "desktop-backgrounds-26.jpg" class = "img-responsive" width = "1000" height = "1000">
+
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <div class = "panel panel-primary">
+      <div class="panel-heading"> This is a panel heading </div>
+      <div class = "panel-body"> This is a panel body </div>
+      <div class = "panel-footer"> This is a panel footer </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class = "panel panel-primary">
+      <div class="panel-heading"> I am panel #2 </div>
+      <div class = "panel-body"> This is a panel body </div>
+      <div class = "panel-footer"> These panels are in a row! </div>
+    </div>
+  </div>
+  <!--The Columns must add to 12-->
+</div>
+<br>
+
+
+<div class="alert alert-success fade in">
+  <a href = '#' class = "close" data-dismiss = "alert" aria-label = "close"> &times; </a>
+  <strong>Success!</strong> You've reached the bottom of the website!
+</div>
+
+</div>
+
+
+
+</body>
+</html>

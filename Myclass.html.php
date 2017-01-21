@@ -152,7 +152,7 @@ $(document).ready(function ($) {
       </div>
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
-        <li><a href="Profile.html.php">My Profile</a></li>
+        <li><a href="profile.html.php">My Profile</a></li>
         <li class="active"><a href="Myclass.html.php">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
@@ -162,7 +162,7 @@ $(document).ready(function ($) {
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="Signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     </div>

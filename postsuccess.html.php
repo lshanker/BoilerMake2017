@@ -31,7 +31,7 @@
 <div class="area">
  Thanks for sharing a great story!
 </div>
-<a href="Readstory.html.php"><button class="button button4">Browse new stories</button></a>
+<a href="index.php"><button class="button button4">Browse new stories</button></a>
 
 
 </body>

@@ -30,7 +30,7 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="Signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     </div>
@@ -43,7 +43,7 @@
   <form action = "index.php" method = "post">
     <textarea type = "text" name = "title" rows = "1" cols = "25%" style="border:solid 7px #666666; resize:none" placeholder="Title..."></textarea><br/><br/>
     <textarea type = "text" name = "storytext" rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Write your story here..."></textarea>
-    <a href="postsuccess.html.php"><button type = "submit" class="button button1">Post</button></a><br/><br/>
+    <button type = "submit" class="button button1">Post</button><br/><br/>
     <input type = "hidden" value = "addstory" name = "action"/>
 </form>
 

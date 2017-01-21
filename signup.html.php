@@ -21,7 +21,7 @@
               Name: <input type="text" name="Name" value=""><br/><br/>
               Password: <input type="text" name="Password" value=""></b>
               </form>
-              <a href="write.html"><button class="button button2">Start writing!</button></a><br/><br/>
+              <a href="write.html.php"><button class="button button2">Start writing!</button></a><br/><br/>
 
             </div>
         </div>

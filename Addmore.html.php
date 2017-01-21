@@ -42,12 +42,12 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
 
 
   <div class = "page-header">
-    <h1>Add more to the story!</h1>
+    <h1>Add more to the story!</h1><br/><br/>
   </div>
   <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled>
     <?php htmlout($storytext); ?></textarea>
     <form action = "postsuccess.html.php" method = "post">
-       <textarea type = "text" name = "newtext" rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Start writing here..."></textarea>
+       <textarea type = "text" name = "newtext" rows= "30" cols=100% style="width: 70%; border:solid 7px #666666; resize:none" placeholder="Start writing here..."></textarea>
        <button class="button button1" type = "submit">Share</button></a><br/><br/>
        <input type = "hidden" value = "<?php htmlout($storyid); ?>" name = "storyid"/>
        <input type = "hidden" name = "storytext" value = "  <?php htmlout($storytext); ?>"/>

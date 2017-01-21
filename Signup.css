@@ -19,7 +19,7 @@ textarea{
 }
 
 .button {
-    background-color: white; 
+    background-color: black; 
     border-radius: 15px 50px;
     border: none;
     color: white;
@@ -38,13 +38,24 @@ textarea{
 .button2 {
     background-color: #F3F7F6;
     color: black;
-    border: 4px solid #C1D7CD;
+    border: 4px solid #4d3300;
     position: absolute;
-    right: 18%;
+    left: 50%;
+    top: 45%;
     }
 
 .button2:hover {
-    background-color: #666666;
+    background-color: #999999;
     color: white;
+}
+
+.placement {
+    font: bold;
+    color: white;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    margin-top:95px;
 }
 </style>

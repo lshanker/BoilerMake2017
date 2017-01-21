@@ -24,6 +24,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li><a href="profile.html.php">My Profile</a></li>
+        <li><a href="Myclass.html.php">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -49,7 +50,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <?php htmlout($story["title"]); ?></textarea>
     </div>
     <div>
-      <button class="button button3" type = "submit">Read this story!</button><br/><br/>
+      <a href="Addmore.html.php"><button class="button button3" type = "submit">Read this story!</button></a><br/><br/>
     </div>
       <input type = "hidden" value = "<?php htmlout($story["id"]); ?>" name = "id"/>
       <input type = "hidden" value = "<?php htmlout($story["submissions"]); ?>" name = "submissions"/>

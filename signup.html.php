@@ -1,11 +1,8 @@
-<?php
-include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
-?>
 
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-  <title>Sign In</title>
+  <title>Write a story</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,19 +16,12 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
 <body background ="http://wallpaper-gallery.net/images/inspiring-wallpapers/inspiring-wallpapers-23.jpg">
     <div class = "container-fluid">
         <div class="wrapper"><b>
-              <div class="placement">
-              <h3 align="center" class="form-signin-heading">Sign In</h3><br/>
-              <?PHP if(isset($loginError)): ?>
-              <p><?php echo htmlout($loginError); ?></p>
-            <?php endif; ?>
-              <form action = "" method = "post">
-              Email: <input type="text" name="email" value=""><br/><br/>
-              Password: <input type="password" name="password" value=""></b>
-                      <input type = "hidden" name = "action" value = "login"/>
-                      <button type = "submit" value = "Log in" class="button button2">Start Writing!</button>
+              <div class="placement"><form action="#">
+              <h3 align="center" class="form-signin-heading">Create an account</h3><br/>
+              Name: <input type="text" name="Name" value=""><br/><br/>
+              Password: <input type="text" name="Password" value=""></b>
               </form>
-              <a href = "join.html.php">New to our site? Sign up here.</a>
-              <br/><br/>
+              <a href="write.html"><button class="button button2">Start writing!</button></a><br/><br/>
 
             </div>
         </div>
@@ -39,3 +29,5 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
 </body>
 
 </html>
+
+

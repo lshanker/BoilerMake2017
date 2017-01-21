@@ -21,7 +21,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Write</a></li>
         <li><a href="profile.html.php">My Profile</a></li>
-        <li><a href="Myclass.html">My Class</a></li>
+        <li><a href="Myclass.html.php">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -41,9 +41,9 @@
     <h1>Write a new story!</h1>
   </div>
   <form action = "index.php" method = "post">
-    <textarea type = "text" name = "title" rows = "1" cols = "25%" style="border:solid 7px #666666; resize:none" placeholder="Title..."></textarea><br/>
+    <textarea type = "text" name = "title" rows = "1" cols = "25%" style="border:solid 7px #666666; resize:none" placeholder="Title..."></textarea><br/><br/>
     <textarea type = "text" name = "storytext" rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Write your story here..."></textarea>
-    <button type = "submit" class="button button1">Post</button><br/><br/>
+    <a href="postsuccess.html.php"><button type = "submit" class="button button1">Post</button></a><br/><br/>
     <input type = "hidden" value = "addstory" name = "action"/>
 </form>
 

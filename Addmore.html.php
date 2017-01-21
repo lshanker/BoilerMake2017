@@ -21,11 +21,11 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="Readstory.html">Read a story!</a>
+        <a class="navbar-brand" href="index.php">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="write.html">Write a new story</a></li>
-        <li><a href="Profile.html">My Profile</a></li>
+        <li><a href="write.html.php">Write a new story</a></li>
+        <li><a href="profile.html.php">My Profile</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -34,7 +34,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="Signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     </div>

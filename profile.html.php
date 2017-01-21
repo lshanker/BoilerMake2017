@@ -1,11 +1,15 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
 
+if(!session_id()){
 session_start();
+}
+
 
 include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
 
-$result = MySQLi_query($link, "SELECT name, grade, points FROM authors WHERE email = 'lshanke@purdue.edu'");
+$email = mysqli_real_escape_string($link, $_SESSION['email']);
+$result = MySQLi_query($link, "SELECT name, grade, points FROM authors WHERE email = '$email'");
 
 if(!$result){
   $output = "Error fetching student info: " . MySQLi_error($link);
@@ -44,7 +48,7 @@ if(!$result){
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li class="active"><a href="#">My Profile</a></li>
-        <li><a href="Myclass.html.php">My Class</a></li>
+        <li><a href="Myclass.html">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

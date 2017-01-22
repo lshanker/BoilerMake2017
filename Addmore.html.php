@@ -24,8 +24,8 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
         <a class="navbar-brand" href="index.php">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="write.html.php">Write a new story</a></li>
-        <li><a href="profile.html.php">My Profile</a></li>
+        <li><a href="write.html">Write a new story</a></li>
+        <li><a href="Profile.html">My Profile</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -34,7 +34,7 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     </div>
@@ -42,12 +42,13 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
 
 
   <div class = "page-header">
-    <h1>Add more to the story!</h1><br/><br/>
+    <h1>Add more to the story!</h1>
+    <h3>   <b>   <?php htmlout("Title: " . $_POST['title']); ?> </b></h3>
   </div>
-  <textarea rows = "15" style="resize:none; width: 70%; border:solid 5px #666666" disabled>
+  <textarea style="resize:none; width: 70%; border:solid 5px #666666" disabled>
     <?php htmlout($storytext); ?></textarea>
     <form action = "postsuccess.html.php" method = "post">
-       <textarea type = "text" name = "newtext" rows= "30" cols=100% style="width: 70%; border:solid 7px #666666; resize:none" placeholder="Start writing here..."></textarea>
+       <textarea type = "text" name = "newtext" rows= "30" cols=100% style="border:solid 7px #666666; resize:none" placeholder="Start writing here..."></textarea>
        <button class="button button1" type = "submit">Share</button></a><br/><br/>
        <input type = "hidden" value = "<?php htmlout($storyid); ?>" name = "storyid"/>
        <input type = "hidden" name = "storytext" value = "  <?php htmlout($storytext); ?>"/>

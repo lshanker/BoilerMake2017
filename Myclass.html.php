@@ -59,13 +59,16 @@ usort($authors, "cmp");
         "<?php echo $author['name']; ?>"
         ,
         <?php endforeach; ?>  ];
+    this.listPoints = [
+//get points and put it here
+    ]
   }
   studentPoints.prototype.getData = function() {
     var results = [];
     for (var i = 0, len = this.list.length; i < len; i++) {
       results.push({
         name: this.list[i],
-        points: rnd(0, 100)
+        points: this.listPoints[i]
       });
     }
     return results;
@@ -129,6 +132,7 @@ usort($authors, "cmp");
     var _this = this;
     $ul.empty();
     this.list = [];
+    this.listPoints = [];
 
     for (var i = 0; i < elemSize; i++) {
       var student = $('<li>')

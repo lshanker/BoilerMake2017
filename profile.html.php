@@ -51,9 +51,10 @@ if(!$result){
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Read a story!</a>
-        </div>
-        <ul class="nav navbar-nav">
+      <a class="navbar-brand" href="#"><img src="http://i68.tinypic.com/29235du.jpg"/ style=" width:32px;" ></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="index.php">Read a story!</a></li>
           <li><a href="write.html.php">Write</a></li>
           <li><a href="profile.html.php">My Profile</a></li>
           <li><a href="Myclass.html.php">Leaderboard</a></li>

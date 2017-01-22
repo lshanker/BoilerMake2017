@@ -1,4 +1,13 @@
 <style>
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+.navbar-brand>img {
+  padding: auto;
+}
+
 .wrapper {
     text-align: center;
 }

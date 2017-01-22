@@ -50,13 +50,13 @@
     font-weight:bold;
 }
 /*amount of points */
-.count{
+.points{
     display:inline-block;
     float:right;
     color:#F00;
     font-weight:bold;
 }
-.count:after{
+.points:after{
     content:' points';
     color:#CCC;
     font-size:80%;

@@ -1,3 +1,41 @@
+<?php
+
+include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+
+$result = MySQLi_query($link, "SELECT name, points FROM authors");
+
+if(!$result){
+  $output = "Error fetching stories: " . MySQLi_error($link);
+  include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
+  exit();
+}
+
+while($row = mysqli_fetch_array($result)){
+  $authors[] = array("name" => $row['name'], "points" => $row['points']);
+}
+
+
+function cmp($a, $b)
+{
+  if($a['points']>$b['points']){
+    return 1;
+  }
+  if($a['points']<$b['points']){
+    return -1;
+  }
+  if($a['points']<$b['points']){
+    return 0;
+  }
+}
+
+echo var_dump($authors);
+usort($authors, "cmp");
+echo "\n AFTER \n";
+echo var_dump($authors);
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -182,7 +220,7 @@ $(document).ready(function ($) {
     <h1><span>Leader Board</span></h1>
     <div class="content"></div>
 </div>
-  
+
 
   </body>
 </html>

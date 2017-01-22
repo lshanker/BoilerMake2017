@@ -56,12 +56,16 @@ usort($authors, "cmp");
     this.callback = callback;
     this.config = $.extend(defaults, options);
     this.list = [
-      <?php foreach($authors as $author):?> 
+      <?php foreach($authors as $author):?>
         "<?php echo $author['name']; ?>"
         ,
         <?php endforeach; ?>  ];
     this.listPoints = [
 //get points and put it here
+<?php foreach($authors as $author):?>
+  "<?php echo $author['points']; ?>"
+  ,
+  <?php endforeach; ?>
     ]
   }
   studentPoints.prototype.getData = function() {
@@ -166,6 +170,18 @@ usort($authors, "cmp");
   };
 
   window.Leaderboard = Leaderboard;
+//random number generator
+/*
+  function rnd (min,max){
+    min = min || 100;
+    if (!max){
+      max = min;
+      min = 1;
+    }
+    return  Math.floor(Math.random() * (max-min+1) + min);
+  }
+  */
+//attaches the random number to a string
   function numberFormat(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -186,20 +202,20 @@ $(document).ready(function ($) {
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-      <a class="navbar-brand" href="#"><img src="http://i68.tinypic.com/29235du.jpg"/ style=" width:32px;" ></a>
+        <a class="navbar-brand" href="index.php">Read a story!</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="index.php">Read a story!</a></li>
         <li><a href="write.html.php">Write</a></li>
         <li><a href="profile.html.php">My Profile</a></li>
-        <li class="active"><a href="Myclass.html.php">My Class</a></li>
+        <li class="active"><a href="Myclass.html.php">Leaderboard</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" action = "index.php" method = "post">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" name = "keywords" class="form-control" placeholder="Search by title"/>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+      <button type="submit" name = "action" value = "search" class="btn btn-default">Submit</button>
+      <input type = "hidden" name = "message" value = "Search results:"/>
+     </form>
       <ul class="nav navbar-nav navbar-right">
       <form action = "index.php" method = "post">
         <button type="submit" class="btn btn-default">Logout</button>
@@ -213,9 +229,6 @@ $(document).ready(function ($) {
     <h1><span>Leader Board</span></h1>
     <div class="content"></div>
 </div>
-
-
-
 
 
   </body>

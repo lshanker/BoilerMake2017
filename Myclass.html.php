@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
   (function ($) {
-  var FakePoller = function(options, callback){
+  var studentPoints = function(options, callback){
     var defaults = {
       frequency: 60,
       limit: 10
@@ -25,26 +25,26 @@
       'Rick Astley'
     ];
   }
-  FakePoller.prototype.getData = function() {
+  studentPoints.prototype.getData = function() {
     var results = [];
     for (var i = 0, len = this.list.length; i < len; i++) {
       results.push({
         name: this.list[i],
-        count: rnd(0, 2000)
+        points: rnd(0, 100)
       });
     }
     return results;
   };
-  FakePoller.prototype.processData = function() {
+  studentPoints.prototype.processData = function() {
     return this.sortData(this.getData()).slice(0, this.config.limit);
   };
 
-  FakePoller.prototype.sortData = function(data) {
+  studentPoints.prototype.sortData = function(data) {
     return data.sort(function(a, b) {
-      return b.count - a.count;
+      return b.points - a.points;
     });
   };
-  FakePoller.prototype.start = function() {
+  studentPoints.prototype.start = function() {
     var _this = this;
     this.interval = setInterval((function() {
       _this.callback(_this.processData());
@@ -52,11 +52,11 @@
     this.callback(this.processData());
     return this;
   };
-  FakePoller.prototype.stop = function() {
+  studentPoints.prototype.stop = function() {
     clearInterval(this.interval);
     return this;
   };
-  window.FakePoller = FakePoller;
+  window.studentPoints = studentPoints;
 
   var Leaderboard = function (elemId, options) {
     var _this = this;
@@ -64,8 +64,8 @@
       limit:10,
       frequency:15
     };
-    this.currentItem = 0;
-    this.currentCount = 0;
+    this.currentStudent = 0;
+    this.currentPoints = 0;
     this.config = $.extend(defaults,options);
 
     this.$elem = $(elemId);
@@ -76,14 +76,14 @@
     this.$content = $('<ul>');
     this.$elem.append(this.$content);
 
-    this.poller = new FakePoller({frequency: this.config.frequency, limit: this.config.limit}, function (data) {
+    this.poller = new studentPoints({frequency: this.config.frequency, limit: this.config.limit}, function (data) {
       if (data) {
-        if(_this.currentCount != data.length){
+        if(_this.currentPoints != data.length){
           _this.buildElements(_this.$content,data.length);
         }
-        _this.currentCount = data.length;
+        _this.currentPoints = data.length;
         _this.data = data;
-        _this.list[0].$item.addClass('animate');
+        _this.list[0].$student.addClass('animate');
       }
     });
 
@@ -96,23 +96,23 @@
     this.list = [];
 
     for (var i = 0; i < elemSize; i++) {
-      var item = $('<li>')
+      var student = $('<li>')
         .on("animationend webkitAnimationEnd oAnimationEnd",eventAnimationEnd.bind(this) )
         .appendTo($ul);
       this.list.push({
-               $item: item,
-               $name: $('<span class="name">Loading...</span>').appendTo(item),
-               $count: $('<span class="count">Loading...</span>').appendTo(item)
+               $student: student,
+               $name: $('<span class="name">Loading...</span>').appendTo(student),
+               $points: $('<span class="points">Loading...</span>').appendTo(student)
            });
     }
 
     function eventAnimationEnd (evt){
-      this.list[this.currentItem].$name.text(_this.data[this.currentItem].name);
-      this.list[this.currentItem].$count.text(_this.data[this.currentItem].count);
-      this.list[this.currentItem].$item.removeClass('animate');
-      this.currentItem = this.currentItem >= this.currentCount - 1 ? 0 : this.currentItem + 1;
-      if (this.currentItem != 0) {
-        this.list[this.currentItem].$item.addClass('animate');
+      this.list[this.currentStudent].$name.text(_this.data[this.currentStudent].name);
+      this.list[this.currentStudent].$points.text(_this.data[this.currentStudent].points);
+      this.list[this.currentStudent].$student.removeClass('animate');
+      this.currentStudent = this.currentStudent >= this.currentPoints - 1 ? 0 : this.currentStudent + 1;
+      if (this.currentStudent != 0) {
+        this.list[this.currentStudent].$student.addClass('animate');
       }
     }
   };
@@ -126,7 +126,7 @@
   };
 
   window.Leaderboard = Leaderboard;
-  //Helper
+//random number generator
   function rnd (min,max){
     min = min || 100;
     if (!max){
@@ -135,14 +135,14 @@
     }
     return  Math.floor(Math.random() * (max-min+1) + min);
   }
-
+//attaches the random number to a string
   function numberFormat(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 })(jQuery);
 
 $(document).ready(function ($) {
-  var myLeaderboard = new Leaderboard(".content", {limit:8,frequency:8});
+  var myLeaderboard = new Leaderboard(".content", {limit:5,frequency:4});
 });
 
 </script>

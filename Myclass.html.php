@@ -208,12 +208,13 @@ $(document).ready(function ($) {
         <li><a href="profile.html.php">My Profile</a></li>
         <li class="active"><a href="Myclass.html.php">Leaderboard</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" action = "index.php" method = "post">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" name = "keywords" class="form-control" placeholder="Search by title"/>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+      <button type="submit" name = "action" value = "search" class="btn btn-default">Submit</button>
+      <input type = "hidden" name = "message" value = "Search results:"/>
+     </form>
       <ul class="nav navbar-nav navbar-right">
       <form action = "index.php" method = "post">
         <button type="submit" class="btn btn-default">Logout</button>

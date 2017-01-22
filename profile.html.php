@@ -45,33 +45,35 @@ if(!$result){
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<body background ="http://7-themes.com/data_images/collection/9/4506641-orange-wallpapers.png">
-<div class="container-fluid">
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">Read a story!</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li><a href="write.html.php">Write</a></li>
-        <li class="active"><a href="#">My Profile</a></li>
-        <li><a href="Myclass.html.php">Leaderboard</a></li>
-      </ul>
-      <form class="navbar-form navbar-left">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-      <ul class="nav navbar-nav navbar-right">
+  <body background ="http://7-themes.com/data_images/collection/9/4506641-orange-wallpapers.png">
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Read a story!</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="write.html.php">Write</a></li>
+          <li><a href="profile.html.php">My Profile</a></li>
+          <li><a href="Myclass.html.php">Leaderboard</a></li>
+        </ul>
+        <form class="navbar-form navbar-left" action = "index.php" method = "post">
+        <div class="form-group">
+          <input type="text" name = "keywords" class="form-control" placeholder="Search by title"/>
+        </div>
+        <button type="submit" name = "action" value = "search" class="btn btn-default">Submit</button>
+        <input type = "hidden" name = "message" value = "Search results:"/>
+       </form>
+        <ul class="nav navbar-nav navbar-right">
       <form action = "index.php" method = "post">
-        <button type="submit" class="btn btn-default">Logout</button>
-        <input type = "hidden" name = "action" value = "logout"/>
-        <input type = "hidden" name = "goto" value = "index.php"/>
+          <button type="submit" class="btn btn-default">Logout</button>
+          <input type = "hidden" name = "action" value = "logout"/>
+          <input type = "hidden" name = "goto" value = "index.php"/>
       </form>
-    </ul>
-    </div>
-  </nav>
+      </ul>
+      </div>
+    </nav>
+    <div align="center">
 
 
   <div class="container">

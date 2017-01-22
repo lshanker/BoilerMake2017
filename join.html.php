@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body background = "orange.jpg">
 <div class="container-fluid">
 
   <form action = "index.php" method = "post">

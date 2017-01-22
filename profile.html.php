@@ -1,29 +1,21 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpers.inc.php";
-
 if(!session_id()){
 session_start();
 }
-
-
 include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
-
 $email = mysqli_real_escape_string($link, $_SESSION['email']);
 $result = MySQLi_query($link, "SELECT name, grade, points FROM authors WHERE email = '$email'");
-
 if(!$result){
   $output = "Error fetching student info: " . MySQLi_error($link);
   include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
   exit();
 }
-
   while($row = mysqli_fetch_array($result)){
   $userInfos[] = array("name" => $row["name"], "grade" => $row["grade"],
                       "points" => $row["points"]);
   }
-
   $userInfo = $userInfos[0];
-
  ?>
 
 <!DOCTYPE html>
@@ -65,14 +57,12 @@ if(!$result){
 
 
   <div class="container">
-  <div class = "row">
-    <div class = "col-md-3" ><br /><br /><br /><IMG SRC="https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/Common-dog-behaviors-explained.jpg?itok=FSzwbBoi" ALT="some text" WIDTH=250 HEIGHT=250>
-    <h4>Grade: <?php htmlout($userInfo['grade']) ?></h4>
-    <h4>Points: <?php htmlout($userInfo['points']) ?></h4>
-    </div>
-      <div class = "col-md-7">
+    
+    
       <h1><?php htmlout($userInfo['name']) ?><br /></h1>
-      <h4>Woodside Elemntary School<br /><br /><br /></h4><div class="table-responsive">
+      <h4>Woodside Elemntary School<br />
+    <h4>Grade: <?php htmlout($userInfo['grade']) ?></h4>
+    <h3>Points: <?php htmlout($userInfo['points']) ?></h3><br /><br /></h4><div class="table-responsive">
   <table class = "table">
     <thread>
       <tr>
@@ -92,9 +82,6 @@ if(!$result){
     </tbody>
   </table>
 </div>
-        </ul>
-    </div>
-  </div>
 </div>
 
   </body>

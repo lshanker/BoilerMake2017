@@ -1,5 +1,14 @@
 <style>
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+.navbar-brand>img {
+  padding: auto;
+}
+
 .leaderboard {
     position:relative;
     width:70%;

@@ -18,20 +18,18 @@ while($row = mysqli_fetch_array($result)){
 function cmp($a, $b)
 {
   if($a['points']>$b['points']){
-    return 1;
+    return -1;
   }
   if($a['points']<$b['points']){
-    return -1;
+    return 1;
   }
   if($a['points']<$b['points']){
     return 0;
   }
 }
 
-echo var_dump($authors);
+
 usort($authors, "cmp");
-echo "\n AFTER \n";
-echo var_dump($authors);
 
  ?>
 
@@ -57,11 +55,10 @@ echo var_dump($authors);
     this.callback = callback;
     this.config = $.extend(defaults, options);
     this.list = [
-      'Survivor',
-      'Firefly',
-      'Dexter',
-      'Rick Astley'
-    ];
+      <?php foreach($authors as $author):?> 
+        "<?php echo $author['name']; ?>"
+        ,
+        <?php endforeach; ?>  ];
   }
   studentPoints.prototype.getData = function() {
     var results = [];

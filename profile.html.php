@@ -40,7 +40,7 @@ if(!$result){
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li class="active"><a href="#">My Profile</a></li>
-        <li><a href="Myclass.html">My Class</a></li>
+        <li><a href="Myclass.html.php">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

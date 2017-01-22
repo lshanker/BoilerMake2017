@@ -40,7 +40,7 @@ if(!$result){
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li class="active"><a href="#">My Profile</a></li>
-        <li><a href="Myclass.html.php">My Class</a></li>
+        <li><a href="Myclass.html">My Class</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -49,8 +49,11 @@ if(!$result){
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="signup.html.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <form action = "index.php" method = "post">
+        <button type="submit" class="btn btn-default">Logout</button>
+        <input type = "hidden" name = "action" value = "logout"/>
+        <input type = "hidden" name = "goto" value = "index.php"/>
+      </form>
     </ul>
     </div>
   </nav>

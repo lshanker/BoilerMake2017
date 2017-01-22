@@ -36,9 +36,10 @@ include_once include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/helpe
               <form action = "" method = "post">
               Email: <input type="text" name="email" value=""><br/><br/>
               Password: <input type="password" name="password" value=""></b>
-                      <input type = "hidden" name = "action" value = "login"/>
-                      <button type = "submit" value = "Log in" class="button button2">Start Writing!</button>
+                      <input type = "hidden" name = "action" value = "login"/></br>
+                      <input type = "submit" value = "Start Writing!"/>
               </form>
+		</br>
               <a href = "join.html.php">New to our site? Sign up here.</a>
               <br/><br/>
               <br/><br/>

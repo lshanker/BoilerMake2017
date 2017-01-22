@@ -63,8 +63,6 @@ if(!$result){
     
     
       <h1><?php htmlout($userInfo['name']) ?><br /></h1>
-      <h4>Woodside Elemntary School<br />
-    <h4>Grade: <?php htmlout($userInfo['grade']) ?></h4>
     <h3>Points: <?php htmlout($userInfo['points']) ?></h3><br /><br /></h4><div class="table-responsive">
   <table class = "table">
     <thread>

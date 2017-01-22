@@ -166,6 +166,7 @@ usort($authors, "cmp");
 
   window.Leaderboard = Leaderboard;
 //random number generator
+/*
   function rnd (min,max){
     min = min || 100;
     if (!max){
@@ -174,6 +175,7 @@ usort($authors, "cmp");
     }
     return  Math.floor(Math.random() * (max-min+1) + min);
   }
+  */
 //attaches the random number to a string
   function numberFormat(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

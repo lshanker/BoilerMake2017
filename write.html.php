@@ -21,7 +21,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Write</a></li>
         <li><a href="profile.html.php">My Profile</a></li>
-        <li><a href="Myclass.html.php">My Class</a></li>
+        <li><a href="Myclass.html.php">Leaderboard</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

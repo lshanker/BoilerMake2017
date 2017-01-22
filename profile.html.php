@@ -4,6 +4,7 @@ if(!session_id()){
 session_start();
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
+
 $email = mysqli_real_escape_string($link, $_SESSION['email']);
 $result = MySQLi_query($link, "SELECT name, grade, points FROM authors WHERE email = '$email'");
 if(!$result){
@@ -16,6 +17,20 @@ if(!$result){
                       "points" => $row["points"]);
   }
   $userInfo = $userInfos[0];
+
+  //Get the story titles
+  $result = MySQLi_query($link, "SELECT title FROM stories WHERE authoremail = '$email'");
+  if(!$result){
+    $output = "Error fetching student stories: " . MySQLi_error($link);
+    include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
+    exit();
+  }
+
+  while($row = mysqli_fetch_array($result)){
+  $titles[] = array("title" => $row["title"]);
+  }
+
+
  ?>
 
 <!DOCTYPE html>
@@ -40,7 +55,7 @@ if(!$result){
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li class="active"><a href="#">My Profile</a></li>
-        <li><a href="Myclass.html.php">My Class</a></li>
+        <li><a href="Myclass.html.php">Leaderboard</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -60,8 +75,8 @@ if(!$result){
 
 
   <div class="container">
-    
-    
+
+
       <h1><?php htmlout($userInfo['name']) ?><br /></h1>
     <h3>Points: <?php htmlout($userInfo['points']) ?></h3><br /><br /></h4><div class="table-responsive">
   <table class = "table">
@@ -71,15 +86,11 @@ if(!$result){
       </tr>
     </thread>
     <tbody>
+      <?php foreach($titles as $title): ?>
       <tr>
-        <td>All About My Dog</td>
+        <td><?php htmlout($title['title']); ?></td>
       </tr>
-      <tr>
-        <td>Where I Went Over Christmas</td>
-      </tr>
-      <tr>
-        <td>How I Broke My Arm</td>
-      </tr>
+    <?php endforeach; ?>
     </tbody>
   </table>
 </div>

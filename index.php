@@ -30,16 +30,7 @@ if(!userIsLoggedIn()){
 if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
   include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/boilerMakedb.inc.php";
   $GLOBALS['addstory'] = "Story submitted.  You got 5 points!";
-  $storytext = mysqli_real_escape_string($link, $_POST["storytext"]);
-  $title = mysqli_real_escape_string($link, $_POST['title']);
-  $sql = "INSERT INTO stories SET storytext = '$storytext', storydate = 'CURDATE()', title = '$title'";
-  if(!MySQLi_query($link, $sql)){
-    $output = 'Error adding submitted story.';
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/output.html.php';
-    exit();
-  }
 
-  //Now update the points (+5 for starting a story)
   $email = mysqli_real_escape_string($link, $_SESSION['email']);
   $result = MySQLi_query($link, "SELECT name, points FROM authors WHERE email = '$email'");
 
@@ -56,6 +47,19 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
     $authorName = $names[0]['name'];
     $currPoints = $names[0]['points'];
 
+
+  $storytext = mysqli_real_escape_string($link, $_POST["storytext"]);
+  $title = mysqli_real_escape_string($link, $_POST['title']);
+  $sql = "INSERT INTO stories SET storytext = '$storytext', storydate = 'CURDATE()', title = '$title', authoremail = '$email'";
+  if(!MySQLi_query($link, $sql)){
+    $output = 'Error adding submitted story.';
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/output.html.php';
+    exit();
+  }
+
+  //Now update the points (+5 for starting a story)
+
+
   $newPoints = $currPoints + 5;
   $sql = "UPDATE authors SET points = '$newPoints' WHERE email = '$email'";
 
@@ -66,6 +70,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
     include $_SERVER['DOCUMENT_ROOT'] . "/BoilerMake2017/includes/output.html.php";
     exit();
   }
+
 
   header('Location: .');
   exit();
@@ -81,6 +86,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="addstory"){
 
   //If the user clicks on "read this story"
   if(isset($_POST["action"]) && $_POST["action"]=="readstory"){
+
     $storytext = $_POST["storytext"];
     $date = $_POST["storydate"];
     $submissions = $_POST["submissions"];

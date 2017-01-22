@@ -55,12 +55,16 @@ usort($authors, "cmp");
     this.callback = callback;
     this.config = $.extend(defaults, options);
     this.list = [
-      <?php foreach($authors as $author):?> 
+      <?php foreach($authors as $author):?>
         "<?php echo $author['name']; ?>"
         ,
         <?php endforeach; ?>  ];
     this.listPoints = [
 //get points and put it here
+<?php foreach($authors as $author):?>
+  "<?php echo $author['points']; ?>"
+  ,
+  <?php endforeach; ?>
     ]
   }
   studentPoints.prototype.getData = function() {
@@ -202,7 +206,7 @@ $(document).ready(function ($) {
       <ul class="nav navbar-nav">
         <li><a href="write.html.php">Write</a></li>
         <li><a href="profile.html.php">My Profile</a></li>
-        <li class="active"><a href="Myclass.html.php">My Class</a></li>
+        <li class="active"><a href="Myclass.html.php">Leaderboard</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">

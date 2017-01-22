@@ -31,7 +31,7 @@
 
         <!--Second column-->
         <div class="col-md-4">
-        <IMG SRC="http://clipart-library.com/image_gallery/136756.jpg" ALT="some text" WIDTH=32 HEIGHT=32>
+        <IMG SRC="http://worldartsme.com/images/lock-black-and-white-clipart-1.jpg" ALT="some text" WIDTH=32 HEIGHT=32>
             <div class="md-form">
                 <i class="fa fa-lock prefix"></i>
                 <input type="password" id="form82" class="form-control validate" name = "password">
